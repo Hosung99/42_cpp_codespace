@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 06:32:11 by codespace         #+#    #+#             */
-/*   Updated: 2023/12/23 08:43:28 by codespace        ###   ########.fr       */
+/*   Updated: 2023/12/26 00:56:14 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 
 class Fixed
 {
 	private:
 		int				value;
-		float			f_value;
 		static const int bits = 8;
 	public:
 		Fixed();
@@ -35,4 +35,5 @@ class Fixed
 		int toInt(void) const;
 };
 
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 #endif
