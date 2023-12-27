@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2023/12/26 00:55:01 by Sungho           ###   ########.fr       */
+/*   Updated: 2023/12/26 13:26:05 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int main( void ) {
   std::cout << "c is " << c << std::endl;
   std::cout << "d is " << d << std::endl;
 
+
   std::cout << "a is " << a.toInt() << " as integer" << std::endl;
   std::cout << "b is " << b.toInt() << " as integer" << std::endl;
   std::cout << "c is " << c.toInt() << " as integer" << std::endl;
   std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-
 
   return 0;
 }
