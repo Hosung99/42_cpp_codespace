@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:52:14 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/02 14:45:33 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/02 06:41:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Default Destructor" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& scav)
+ScavTrap::ScavTrap(const ScavTrap& scav) : ClapTrap(scav)
 {
 	*this = scav;
 }

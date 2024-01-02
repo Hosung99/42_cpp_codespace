@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:52:33 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/02 15:22:38 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/02 06:42:52 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	this->Hit_points = 100;
 	this->Energy_points = 100;
@@ -33,7 +33,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "FragTrap named " << this->name << " Constructor" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& frag)
+FragTrap::FragTrap(const FragTrap& frag) : ClapTrap(frag)
 {
 	*this = frag;
 }
