@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:52:14 by seoson            #+#    #+#             */
-/*   Updated: 2023/12/30 22:18:43 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/02 13:59:02 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->name = "null";
 	this->Hit_points = 100;
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
 	std::cout << "ScavTrap Default Constructor" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->name = name;
 	this->Hit_points = 100;
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
