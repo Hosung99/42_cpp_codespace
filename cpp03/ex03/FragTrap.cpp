@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:52:33 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/02 13:58:49 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/02 06:43:35 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "FragTrap named " << this->name << " Constructor" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& frag)
+FragTrap::FragTrap(const FragTrap& frag) : ClapTrap(frag)
 {
 	*this = frag;
 }
