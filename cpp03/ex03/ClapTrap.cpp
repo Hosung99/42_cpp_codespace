@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:36:18 by seoson            #+#    #+#             */
-/*   Updated: 2023/12/30 22:37:58 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/02 14:01:53 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ ClapTrap::ClapTrap():name("ClapTrap Default name"),Hit_points(10),Energy_points(
 	std::cout << "ClapTrap Default Constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name):Hit_points(10), Energy_points(10), Attack_damage(0)
+ClapTrap::ClapTrap(std::string name):name(name), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
-	this->name = name;
 	std::cout << "ClapTrap named " << this->name << " Constructor" << std::endl;
 }
 
@@ -57,13 +56,13 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (Hit_points == 0)
+	if (this->Hit_points == 0)
 	{
 		std::cout << "already dead." << std::endl;
 		return ;
 	}
 	if (this->Hit_points < amount)
-		Hit_points = 0;
+		this->Hit_points = 0;
 	else
 		this->Hit_points -= amount;
 	std::cout << "ClapTrap Taken " << amount <<  "Damage. rest HP : " << this->Hit_points << std::endl;

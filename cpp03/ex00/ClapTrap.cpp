@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:36:18 by seoson            #+#    #+#             */
-/*   Updated: 2023/12/30 22:29:23 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/02 14:37:16 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "Energy Point is 0. Can't to nothing" << std::endl;
 		return ;
 	}
-	if (this->Hit_points + amount > 2147483647)
+	if (this->Hit_points + amount > 4294967295)
 	{
 		std::cout << "Energy Overflow caused." << std::endl;
 		return ;

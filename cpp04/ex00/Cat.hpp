@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 18:52:10 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/02 14:25:27 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 10:27:07 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/02 11:55:58 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class Cat : public Animal
 {
-	protected:
-		static const int Scav_Energy_points = 50;
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap(const ScavTrap& scav);
-		ScavTrap&		operator=(const ScavTrap& scav);
-		virtual void	attack();
-		void			guardGate();
+		Cat();
+		~Cat();
+		Cat(const Cat& cat);
+		Cat&		operator=(const Cat& cat);
+		std::string	getType() const;
+		virtual void		makeSound();
+		virtual void		makeSound() const;
 };
 
 #endif

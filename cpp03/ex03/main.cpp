@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:36:11 by seoson            #+#    #+#             */
-/*   Updated: 2023/12/30 22:34:56 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/02 15:27:27 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@
 
 int main(void)
 {
-	// DiamondTrap diamond("dia");
-	// diamond.whoAmI();
 	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
 	{
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
 		ClapTrap a;
 		ClapTrap b("Cody");
-
 		std::cout << "\033[34mTesting\033[0m" << std::endl;
 		a.attack("some other robot");
 		a.takeDamage(10);
@@ -45,8 +42,6 @@ int main(void)
 
 		std::cout << "\033[34mTesting\033[0m" << std::endl;
 		a.attack();
-		// for (int i = 0; i < 50; i++)
-		// 	a.attack("CloneTrap");
 		a.beRepaired(22);
 		a.takeDamage(21);
 		a.beRepaired(22);
@@ -71,8 +66,6 @@ int main(void)
 		a.takeDamage(1);
 		a.attack("some random dude");
 		b.highFivesGuys();
-		// for(int i = 0; i < 101; i++)
-		// 	b.attack("FragTrap-clone");
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 	}
 	std::cout << "\n\n### TESTING DIAMONDTRAP ###\n" << std::endl;
@@ -84,6 +77,7 @@ int main(void)
 
 		std::cout << "\033[34mTesting\033[0m" << std::endl;
 		a.whoAmI();
+		a.attack();
 		a.attack();
 		b.whoAmI();
 		b.attack();
