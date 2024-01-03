@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/03 13:41:48 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/03 11:19:16 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 17:12:30 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main( void ) {
-  Fixed a;
-  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include <iostream>
 
-  std::cout << a << std::endl;
-  std::cout << ++a << std::endl;
-  std::cout << a << std::endl;
-  std::cout << a++ << std::endl;
-  std::cout << a << std::endl;
+class Brain
+{
+	private:
+		std::string	ideas[100];
+	public:
+		Brain();
+		virtual ~Brain();
+		Brain(const Brain& other);
+		Brain&		operator=(const Brain& other);
+		void		setIdeas(int index, std::string text);
+		std::string	getIdeas(int index);
+};
 
-  std::cout << b << std::endl;
-
-  std::cout << Fixed::min( a, b ) << std::endl;
-
-  return 0;
-}
+#endif

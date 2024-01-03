@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/03 13:41:48 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 16:09:06 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 10:59:13 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-int main( void ) {
-  Fixed a;
-  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include <iostream>
 
-  std::cout << a << std::endl;
-  std::cout << ++a << std::endl;
-  std::cout << a << std::endl;
-  std::cout << a++ << std::endl;
-  std::cout << a << std::endl;
+class WrongAnimal
+{
+	protected:
+		std::string	type;
+	public:
+		WrongAnimal();
+		virtual ~WrongAnimal();
+		WrongAnimal(const WrongAnimal& other);
+		WrongAnimal&	operator=(const WrongAnimal& other);
+		void			makeSound() const;
+		void			makeSound();
+};
 
-  std::cout << b << std::endl;
-
-  std::cout << Fixed::min( a, b ) << std::endl;
-
-  return 0;
-}
+#endif

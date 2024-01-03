@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/03 13:41:48 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 10:09:49 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 17:26:58 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main( void ) {
-  Fixed a;
-  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include <iostream>
 
-  std::cout << a << std::endl;
-  std::cout << ++a << std::endl;
-  std::cout << a << std::endl;
-  std::cout << a++ << std::endl;
-  std::cout << a << std::endl;
+class Animal
+{
+	protected:
+		std::string	type;
+	public:
+		Animal();
+		virtual ~Animal();
+		Animal(const Animal& animal);
+		Animal&				operator=(const Animal& animal);
+		std::string			getType() const;
+		virtual void		makeSound() const = 0;
+		virtual void		makeSound() = 0;
+};
 
-  std::cout << b << std::endl;
-
-  std::cout << Fixed::min( a, b ) << std::endl;
-
-  return 0;
-}
+#endif
