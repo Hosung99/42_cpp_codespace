@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:32:45 by codespace         #+#    #+#             */
-/*   Updated: 2023/12/23 01:19:30 by codespace        ###   ########.fr       */
+/*   Updated: 2024/01/02 21:03:09 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ std::string	replace(std::fstream &file, std::string *char_to_string)
 	std::string	str,line;
 
 	while (std::getline(file, line))
-		str += line + "\n";
+		str += line;
 	while (1)
 	{
 		pos = str.find(char_to_string[1]);

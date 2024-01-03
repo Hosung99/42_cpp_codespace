@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/03 13:41:48 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 16:13:37 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 11:12:15 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main( void ) {
-  Fixed a;
-  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include "WrongAnimal.hpp"
 
-  std::cout << a << std::endl;
-  std::cout << ++a << std::endl;
-  std::cout << a << std::endl;
-  std::cout << a++ << std::endl;
-  std::cout << a << std::endl;
+class WrongCat : public WrongAnimal
+{
+	public:
+		WrongCat();
+		virtual ~WrongCat();
+		WrongCat(const WrongCat& other);
+		WrongCat&	operator=(const WrongCat& other);
+		void		makeSound() const;
+		void		makeSound();
+};
 
-  std::cout << b << std::endl;
-
-  std::cout << Fixed::min( a, b ) << std::endl;
-
-  return 0;
-}
+#endif

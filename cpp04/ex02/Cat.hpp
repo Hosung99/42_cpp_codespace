@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:11 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/02 20:27:08 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 10:27:07 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 17:48:04 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Fixed
+class Cat : public Animal
 {
 	private:
-		int					RawBits;
-		static const int	bits = 8;
+		Brain	*brain;
 	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed &fixed);
-		Fixed &operator=(const Fixed &fixed);
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		Cat();
+		virtual ~Cat();
+		Cat(const Cat& cat);
+		Cat&			operator=(const Cat& cat);
+		std::string		getType() const;
+		virtual void	makeSound();
+		virtual void	makeSound() const;
+		void			setIdeas(int index, std::string text);
+		std::string		getIdeas(int index);
 };
 
 #endif

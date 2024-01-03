@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 06:32:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/01/03 13:41:48 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/02 10:46:09 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/03 17:31:30 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-int main( void ) {
-  Fixed a;
-  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+int main(void)
+{
+	// Animal*	animal = new Animal();
 
-  std::cout << a << std::endl;
-  std::cout << ++a << std::endl;
-  std::cout << a << std::endl;
-  std::cout << a++ << std::endl;
-  std::cout << a << std::endl;
+	Dog*	dog = new Dog();
+	Cat*	cat = new Cat();
 
-  std::cout << b << std::endl;
-
-  std::cout << Fixed::min( a, b ) << std::endl;
-
-  return 0;
+	dog->makeSound();
+	cat->makeSound();
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 10:27:07 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/02 11:55:58 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/03 11:12:34 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		~Cat();
+		virtual ~Cat();
 		Cat(const Cat& cat);
 		Cat&		operator=(const Cat& cat);
 		std::string	getType() const;
