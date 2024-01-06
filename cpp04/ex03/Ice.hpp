@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 22:10:45 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/03 22:28:23 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/04 19:11:40 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		Ice();
