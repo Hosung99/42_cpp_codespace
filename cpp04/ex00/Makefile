@@ -1,6 +1,6 @@
 CPP = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = ./a.out
+NAME = ./ex00
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
