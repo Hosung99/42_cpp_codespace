@@ -23,7 +23,7 @@ Cure::~Cure()
 	std::cout << "Default Cure Destructor Called" << std::endl;
 }
 
-Cure::Cure(const Cure& other)
+Cure::Cure(const Cure& other) : AMateria(other)
 {
 	*this = other;
 }

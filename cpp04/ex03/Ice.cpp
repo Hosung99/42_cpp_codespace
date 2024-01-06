@@ -23,7 +23,7 @@ Ice::~Ice()
 	std::cout << "Default Ice Destructor Called" << std::endl;
 }
 
-Ice::Ice(const Ice& other)
+Ice::Ice(const Ice& other) : AMateria(other)
 {
 	*this = other;
 }
