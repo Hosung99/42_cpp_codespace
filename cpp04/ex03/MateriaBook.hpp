@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaBook.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 18:31:48 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/04 19:02:20 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/06 14:37:25 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/06 15:23:44 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CURE_HPP
-# define CURE_HPP
+#ifndef MATERIABOOK_HPP
+# define MATERIABOOK_HPP
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria
+class MateriaBook
 {
+	private:
+		static const int	MAX_MAGIC_NUMBER = 1000;
+		AMateria*			materia[MAX_MAGIC_NUMBER];
 	public:
-		Cure();
-		~Cure();
-		Cure(const Cure& other);
-		Cure&	operator=(const Cure& other);
-		virtual AMateria*	clone() const;
-		virtual	void		use(ICharacter& target);
+		MateriaBook();
+		~MateriaBook();
+		MateriaBook(const MateriaBook& other);
+		MateriaBook&	operator=(const MateriaBook& other);
+		void			set_materia(AMateria*);
+		AMateria*		get_materia(int idx);
 };
 
 #endif

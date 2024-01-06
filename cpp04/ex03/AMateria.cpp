@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 21:51:37 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/03 22:13:07 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/04 22:23:01 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ AMateria&	AMateria::operator=(const AMateria& other)
 
 void	AMateria::use(ICharacter& target)
 {
-	std::cout << "can't do with AMateria at " << target.getName() << std::endl;
+	std::cout << "Can't do with AMateria at " << target.getName() << std::endl;
 }
 
 std::string const&	AMateria::getType() const
