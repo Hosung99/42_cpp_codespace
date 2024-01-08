@@ -6,7 +6,7 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 10:46:09 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/03 17:31:30 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/08 09:48:43 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int main(void)
 
 	dog->makeSound();
 	cat->makeSound();
+	delete dog;
+	delete cat;
 	return (0);
 }
