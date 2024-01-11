@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:32:42 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/10 18:52:21 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/11 17:23:46 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("null"), grade(150)
+Bureaucrat::Bureaucrat() : name("Unknown"), grade(150)
 {
 	std::cout << "Bureaucrat Default Constructor Called" << std::endl;
 }

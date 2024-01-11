@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:03:31 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/10 19:13:51 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/11 17:26:25 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	Bureaucrat *c;
 	try
 	{
-		a = new Bureaucrat("seoson", 150);
+		a = new Bureaucrat("seoson1", 150);
 		std::cout << *a;
 		a->decrement();
 	}
@@ -29,13 +29,21 @@ int main()
 	}
 	try
 	{
-		b = new Bureaucrat("seoson", 151);
+		b = new Bureaucrat("seoson2", 151);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
+	try
+	{
+		c = new Bureaucrat("seoson3", 1);
+		c->increment();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	delete a;
 	delete b;
 	delete c;
