@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:37:54 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/12 20:10:29 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/13 16:50:39 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm Destructor Called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(other)
 {
 	*this = other;
 }

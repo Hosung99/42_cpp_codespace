@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:16:51 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/12 16:08:13 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/13 16:50:28 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm Destructor Called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other)
 {
 	*this = other;
 }
