@@ -6,42 +6,36 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:03:31 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/13 15:11:28 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/13 15:09:04 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	Bureaucrat	*a = NULL;
-	Form		*form = NULL;
+	AForm *rrf = NULL;
+	Bureaucrat *b = NULL;
 	try
 	{
-		a = new Bureaucrat("seoson1", 150);
-		form = new Form("form",2,2);
-		std::cout << *form << std::endl;
-		a->signForm(*form);
-		std::cout << *form << std::endl;
+		Intern someRandomIntern;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf << std::endl;
+		b = new Bureaucrat("seoson", 1);
+		b->signForm(*rrf);
+		b->executeForm(*rrf);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	// try
-	// {
-	// 	a = new Bureaucrat("seoson1", 1);
-	// 	form = new Form("form",2,2);
-	// 	std::cout << *form << std::endl;
-	// 	form->beSigned(*a);
-	// 	std::cout << *form << std::endl;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	delete a;
-	delete form;
+	if (rrf)
+		delete rrf;
+	if (b)
+		delete b;
 	return (0);
 }

@@ -6,12 +6,12 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:32:42 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/13 15:09:52 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/13 15:07:23 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Unknown"), grade(150)
 {
@@ -81,7 +81,7 @@ void	Bureaucrat::decrement()
 	this->grade++;
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signForm(AForm& form)
 {
 	if (this->grade > form.getGradeSign())
 	{
@@ -91,6 +91,20 @@ void	Bureaucrat::signForm(Form& form)
 	{
 		form.beSigned(*this);
 		std::cout << form.getName() << " is signed!" << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const& form)
+{
+	AForm &form_temp = const_cast<AForm&>(form);
+	try
+	{
+		form_temp.execute(*this);
+		std::cout << this->getName() << " excuted " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 }
 

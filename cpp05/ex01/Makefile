@@ -1,6 +1,6 @@
 CPP = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = ./ex00
+NAME = ./ex01
 SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 

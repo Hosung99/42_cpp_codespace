@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 19:10:10 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/12 14:15:00 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/12 17:12:11 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : name("null"), isSigned(false), grade_sign(150), grade_excute(150)
+AForm::AForm() : name("null"), isSigned(false), grade_sign(150), grade_excute(150)
 {
 	std::cout << "Default Form Constructor Called" << std::endl;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << "Default Form Destructor Called" << std::endl;
 }
 
-Form::Form(const std::string name, const int grade_first, const int grade_second) : name(name), isSigned(false), grade_sign(grade_first), grade_excute(grade_second)
+AForm::AForm(const std::string name, const int grade_first, const int grade_second) : name(name), isSigned(false), grade_sign(grade_first), grade_excute(grade_second)
 {
 	if (grade_first < 1 || grade_second < 1)
 		throw(GradeTooHighException());
@@ -31,66 +31,90 @@ Form::Form(const std::string name, const int grade_first, const int grade_second
 	std::cout << "Form " << name << " Constructor Called" << std::endl;
 }
 
-Form::Form(const Form& other) : name(other.name), isSigned(other.isSigned), grade_sign(other.grade_sign), grade_excute(other.grade_excute)
+AForm::AForm(const AForm& other) : name(other.name), isSigned(other.isSigned), grade_sign(other.grade_sign), grade_excute(other.grade_excute)
 {
 	std::cout << "Form " << other.name << " Copy Constructor Called" << std::endl;
 }
 
-Form&	Form::operator=(const Form& other)
+AForm&	AForm::operator=(const AForm& other)
 {
 	if (this == &other)
 		return (*this);
-	std::string &constName = const_cast<std::string &>(this->name);
-	constName = other.name;
 
+	this->setName(other.getName());
 	this->isSigned = other.isSigned;
-
-	int &const_grade_sign = const_cast<int &>(this->grade_sign);
-	const_grade_sign = other.getGradeSign();
-
-	int &const_grade_excute = const_cast<int &>(this->grade_excute);
-	const_grade_excute = other.getGradeExcute();
+	this->setGradeSign(other.getGradeSign());
+	this->setGradeExcute(other.getGradeExcute());
 	return (*this);
 }
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
 	return ("Grade is Too High!");
 }
 
-const char* Form::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is Too Low!");
 }
 
-void	Form::beSigned(const Bureaucrat& other)
+const char*
+AForm::FormIsntSignedException::what() const throw()
+{
+	return ("Warning :: Form Isn't Signed!");
+}
+
+void	AForm::beSigned(const Bureaucrat& other)
 {
 	if (this->grade_sign < other.getGrade())
 		throw (GradeTooLowException());
 	this->isSigned = true;
 }
 
-const std::string	Form::getName() const
+const std::string	AForm::getName() const
 {
 	return (this->name);
 }
 
-bool	Form::getIsSigned() const
+bool	AForm::getIsSigned() const
 {
 	return (this->isSigned);
 }
 
-int	Form::getGradeSign() const
+int	AForm::getGradeSign() const
 {
 	return (this->grade_sign);
 }
 
-int	Form::getGradeExcute() const
+int	AForm::getGradeExcute() const
 {
 	return (this->grade_excute);
 }
 
-std::ostream&	operator<<(std::ostream& out, const Form& form)
+void	AForm::setIsSigned(bool target)
+{
+	this->isSigned = target;
+}
+
+void	AForm::setGradeSign(int target)
+{
+	int &const_grade_sign = const_cast<int &>(this->grade_sign);
+	const_grade_sign = target;
+}
+
+void	AForm::setGradeExcute(int target)
+{
+	int &const_grade_excute = const_cast<int &>(this->grade_excute);
+	const_grade_excute = target;
+}
+
+void	AForm::setName(std::string name)
+{
+	std::string &constName = const_cast<std::string &>(this->name);
+	constName = name;
+}
+
+std::ostream&	operator<<(std::ostream& out, const AForm& form)
 {
 	out << form.getName() << " is ";
 	if (form.getIsSigned())
