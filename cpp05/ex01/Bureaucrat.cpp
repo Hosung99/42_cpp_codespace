@@ -6,7 +6,7 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:32:42 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/13 15:09:52 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/13 21:51:38 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ void	Bureaucrat::decrement()
 
 void	Bureaucrat::signForm(Form& form)
 {
-	if (this->grade > form.getGradeSign())
-	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << this->getName() << " grade is " << this->getGrade() << std::endl;
-	}
-	else
+	try
 	{
 		form.beSigned(*this);
 		std::cout << form.getName() << " is signed!" << std::endl;
+	}
+	catch(Form::GradeTooLowException &e)
+	{
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because "<< this->getName() << " grade is " << this->getGrade() << std::endl;
 	}
 }
 
