@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConvert.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 21:52:51 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/16 19:04:41 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/16 22:57:25 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/16 23:14:51 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERT_HPP
-# define SCALARCONVERT_HPP
+#include "Serialization.hpp"
 
-#define OVERFLOW 1
-
-#include <iostream>
-#include <cerrno>
-#include <cmath>
-#include <iomanip>
-
-class ScalarConvert
+int main()
 {
-	private:
-		ScalarConvert();
-		~ScalarConvert();
-		ScalarConvert(const ScalarConvert&);
-		ScalarConvert&	operator=(const ScalarConvert&);
-	public:
-		static	void	convert(std::string);
-};
-
-#endif
+	Data		data;
+	Data*		data2;
+	data.member = 1;
+	data2 = Serialization::deserialize(Serialization::serialize(&data));
+	std::cout << &data << std::endl;
+	std::cout << data2 << std::endl;
+	std::cout << data2->member << std::endl;
+	return (0);
+}

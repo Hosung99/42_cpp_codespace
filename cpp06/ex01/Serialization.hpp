@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConvert.hpp                                  :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 21:52:51 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/16 19:04:41 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/16 22:48:10 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/16 22:57:15 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERT_HPP
-# define SCALARCONVERT_HPP
-
-#define OVERFLOW 1
+#ifndef SERIALIZATION_HPP
+#define SERIALIZATION_HPP
 
 #include <iostream>
-#include <cerrno>
-#include <cmath>
-#include <iomanip>
 
-class ScalarConvert
+struct Data{
+	int member;
+};
+
+class Serialization
 {
 	private:
-		ScalarConvert();
-		~ScalarConvert();
-		ScalarConvert(const ScalarConvert&);
-		ScalarConvert&	operator=(const ScalarConvert&);
+		Serialization();
+		~Serialization();
+		Serialization(const Serialization&);
+		Serialization&		operator=(const Serialization&);
 	public:
-		static	void	convert(std::string);
+		static uintptr_t	serialize(Data* ptr);
+		static Data* 		deserialize(uintptr_t raw);
 };
 
 #endif

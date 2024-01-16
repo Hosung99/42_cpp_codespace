@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConvert.hpp                                  :+:      :+:    :+:   */
+/*   Serialization.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 21:52:51 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/16 19:04:41 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/16 22:55:10 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/16 23:13:52 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERT_HPP
-# define SCALARCONVERT_HPP
+#include "Serialization.hpp"
 
-#define OVERFLOW 1
-
-#include <iostream>
-#include <cerrno>
-#include <cmath>
-#include <iomanip>
-
-class ScalarConvert
+Data*	Serialization::deserialize(uintptr_t raw)
 {
-	private:
-		ScalarConvert();
-		~ScalarConvert();
-		ScalarConvert(const ScalarConvert&);
-		ScalarConvert&	operator=(const ScalarConvert&);
-	public:
-		static	void	convert(std::string);
-};
+	return (reinterpret_cast<Data*>(raw));
+}
 
-#endif
+uintptr_t	Serialization::serialize(Data* ptr)
+{
+	return (reinterpret_cast<uintptr_t>(ptr));
+}

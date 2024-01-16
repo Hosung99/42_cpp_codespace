@@ -1,8 +1,8 @@
 CPP = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = ./ex00
-SRCS = main.cpp ScalarConvert.cpp
-HEADS = ScalarConvert.hpp
+NAME = ./ex01
+SRCS = main.cpp Serialization.cpp
+HEADS = Serialization.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
