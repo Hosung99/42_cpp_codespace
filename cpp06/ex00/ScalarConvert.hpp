@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 21:52:51 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/16 19:04:41 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/17 14:17:33 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <cerrno>
 #include <cmath>
 #include <iomanip>
+#include <limits>
+#include <stdlib.h>
 
 class ScalarConvert
 {

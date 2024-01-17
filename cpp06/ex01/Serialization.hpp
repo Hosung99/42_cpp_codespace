@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 22:48:10 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/16 22:57:15 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/17 14:23:56 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SERIALIZATION_HPP
 
 #include <iostream>
+#include <stdint.h>
 
 struct Data{
 	int member;

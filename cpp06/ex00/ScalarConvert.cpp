@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:30:01 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/16 22:29:43 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/17 14:17:25 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void	print_float(double convert_d, std::string str)
 	float f = static_cast<float>(convert_d);
 	size_t dot_pos = str.find('.');
 	size_t str_len = str.length();
-	std::cout << "dot pos: " << dot_pos <<std::endl;
 	if (str[str_len - 1] == 'f' && (!dot_pos || str[str_len - 2] != '.'))
 		str_len--;
 	if (dot_pos == std::string::npos)

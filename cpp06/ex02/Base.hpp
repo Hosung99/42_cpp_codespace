@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 22:57:25 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:07:24 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 12:27:46 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 14:01:17 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main()
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+class Base
 {
-	Data		data;
-	Data*		data2;
-	data.member = 1;
-	data2 = Serialization::deserialize(Serialization::serialize(&data));
-	std::cout << &data << std::endl;
-	std::cout << data2 << std::endl;
-	std::cout << data2->member << std::endl;
-	return (0);
-}
+	public:
+		virtual ~Base();
+};
+
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
+
+#endif
