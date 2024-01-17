@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 14:04:11 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:35:43 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 16:16:35 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 22:38:52 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
 
-int main()
+#include <iostream>
+
+template<typename T, typename Func>
+void	iter(T a[], int length, Func func)
 {
-	Base* base = generate();
-	identify(base);
-	delete base;
-	return (0);
+	for (int i = 0; i < length; i++)
+	{
+		func(a[i]);
+	}
 }
+
+
+#endif

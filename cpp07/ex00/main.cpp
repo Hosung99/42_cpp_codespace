@@ -5,17 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 14:04:11 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:35:43 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 15:54:45 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 16:14:07 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "whatever.hpp"
 
 int main()
 {
-	Base* base = generate();
-	identify(base);
-	delete base;
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	return (0);
 }

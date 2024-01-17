@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:30:01 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/17 14:17:25 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/17 15:45:59 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	print_double(double convert_d, std::string str)
 {
 	if (str == "nan")
 	{
-		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
 		return ;
 	}
 	if (errno == ERANGE)

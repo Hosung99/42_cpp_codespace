@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:29:35 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:05:50 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/17 14:35:16 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,19 @@ void	identify(Base& p)
 	try
 	{
 		(void)dynamic_cast<A&>(p);
-		std::cout << "class is A!" << std::endl;
+		std::cout << "class is A!!" << std::endl;
 	}
 	catch (std::exception& e){}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
-		std::cout << "class is B!" << std::endl;
+		std::cout << "class is B!!" << std::endl;
 	}
 	catch (std::exception& e){}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
-		std::cout << "class is C!" << std::endl;
+		std::cout << "class is C!!" << std::endl;
 	}
 	catch (std::exception& e){}
 }

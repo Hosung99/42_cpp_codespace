@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 14:04:11 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:35:43 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 22:45:20 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 22:52:00 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-int main()
+#include <iostream>
+#include "Array.tpp"
+
+template <typename T>
+class Array
 {
-	Base* base = generate();
-	identify(base);
-	delete base;
-	return (0);
-}
+	private:
+		T t[];
+	public:
+		Array();
+		~Array();
+		Array(unsigned int n);
+		Array(const Array&);
+		Array& operator=(const Array&);
+		size_t	size() const;
+};
+
+
+
+#endif

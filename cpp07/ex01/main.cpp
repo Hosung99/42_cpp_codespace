@@ -5,17 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 14:04:11 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:35:43 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 22:07:12 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 22:41:53 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "iter.hpp"
 
-int main()
+template< typename T >
+void sprint( T& x )
 {
-	Base* base = generate();
-	identify(base);
-	delete base;
-	return (0);
+  std::cout << x << std::endl;
+  return;
+}
+
+int main() {
+  int tab[] = { 0, 1, 2, 3, 4 };
+
+  iter(tab, 5, sprint<const int>);
+
+  return 0;
 }

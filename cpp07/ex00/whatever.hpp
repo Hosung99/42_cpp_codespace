@@ -1,21 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 14:04:11 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 14:35:43 by seoson           ###   ########.fr       */
+/*   Created: 2024/01/17 15:48:31 by seoson            #+#    #+#             */
+/*   Updated: 2024/01/17 21:46:36 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-int main()
+#include <iostream>
+
+template <typename T>
+void	swap(T& first, T& second)
 {
-	Base* base = generate();
-	identify(base);
-	delete base;
-	return (0);
+	T temp;
+	temp = first;
+	first = second;
+	second = temp;
 }
+
+template <typename T>
+T	min(T first, T second)
+{
+	if (second <= first)
+		return (second);
+	return (first);
+}
+
+template <typename T>
+T	max(T first, T second)
+{
+	if (second >= first)
+		return (second);
+	return (second);
+}
+
+#endif
