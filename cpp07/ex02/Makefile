@@ -1,8 +1,8 @@
 CPP = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = ./ex02
-SRCS = main.cpp Array.tpp
-HEADS = Array.hpp
+SRCS = main.cpp
+HEADS = Array.hpp Array.tpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:16:35 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/17 22:38:52 by seoson           ###   ########.fr       */
+/*   Updated: 2024/01/19 14:27:39 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@
 #include <iostream>
 
 template<typename T, typename Func>
-void	iter(T a[], int length, Func func)
+void	iter(T a[], size_t length, Func& func)
 {
-	for (int i = 0; i < length; i++)
+	for (size_t i = 0; i < length; i++)
+	{
+		func(a[i]);
+	}
+}
+template<typename T, typename Func>
+void	iter(const T a[], size_t length, Func& func)
+{
+	for (size_t i = 0; i < length; i++)
 	{
 		func(a[i]);
 	}
