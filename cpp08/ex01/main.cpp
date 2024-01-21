@@ -5,29 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 22:07:12 by seoson            #+#    #+#             */
-/*   Updated: 2024/01/20 18:35:01 by Sungho           ###   ########.fr       */
+/*   Created: 2024/01/21 13:52:04 by Sungho            #+#    #+#             */
+/*   Updated: 2024/01/21 15:27:46 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Span.hpp"
 
-// static void print_int(int x)
-// {
-//   std::cout << x << std::endl;
-//   return;
-// }
-
-static void print_char(char x)
+int main()
 {
-  std::cout << x << std::endl;
-  return;
-}
-
-int main() {
-  int ex_int[] = {97,98,99,100};
-  char ex_char[] = "HELLO WORLD!";
-  iter(ex_int, 4, print_char);
-  iter(ex_char, 12, print_char);
-  return 0;
+	Span sp = Span(2147483647);
+	// try{
+	// 	sp.addNumber(1);
+	// 	sp.addNumber(1);
+	// }catch(std::exception& e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
+	try{
+		for (int i = 0; i < 10001; i++)
+			sp.addNumber(i);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return (0);
 }
