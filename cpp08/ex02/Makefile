@@ -1,8 +1,8 @@
 CPP = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = ./ex01
-SRCS = main.cpp Span.cpp
-HEADS = Span.hpp
+NAME = ./ex02
+SRCS = main.cpp
+HEADS = MutantStack.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
