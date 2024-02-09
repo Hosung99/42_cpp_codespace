@@ -6,7 +6,7 @@
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:53:18 by Sungho            #+#    #+#             */
-/*   Updated: 2024/01/23 14:02:01 by Sungho           ###   ########.fr       */
+/*   Updated: 2024/01/23 14:19:58 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);
 	std::cout << "------------------------------\n";
 	{
 		std::list<int> list;
@@ -57,6 +56,5 @@ int main()
 			++it;
 		}
 	}
-
 	return 0;
 }
