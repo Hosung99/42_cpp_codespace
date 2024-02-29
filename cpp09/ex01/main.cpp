@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sungho <Sungho@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 20:57:07 by Sungho            #+#    #+#             */
-/*   Updated: 2024/02/11 16:53:21 by Sungho           ###   ########.fr       */
+/*   Created: 2024/02/11 20:18:56 by Sungho            #+#    #+#             */
+/*   Updated: 2024/02/12 14:52:14 by Sungho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	if (argc == 1)
+	if (argc != 2)
 	{
-		std::cout << "Error: could not open file." << std::endl;
+		std::cout << "Expression is only one" << std::endl;
 		return (1);
 	}
-	else if (argc > 2)
+	try
 	{
-		std::cout << "Error: can open 1 file." << std::endl;
-		return (1);
+		RPN rpn(argv[1]);
 	}
-	BitcoinExchange bit;
-	bit.calc(argv[1]);
-	return (0);
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
